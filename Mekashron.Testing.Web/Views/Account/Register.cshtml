@@ -1,0 +1,62 @@
+﻿@model Mekashron.Testing.Web.Models.Register.RegisterNewCustomerView
+
+<body style="background: url(../Image/img1.jpg)" ;>
+<div align="center" style="background-color: transparent; background-image: url('Image/image1.jpg')">
+    <div class="wrapper" style="background: darkgrey; margin-top: 20%; margin-bottom: 20%; opacity: 0.85">
+        <div class="container" align="center">
+            <div class="row">
+                <div class="module module-login span4 offset4">
+                    <form class="form-vertical" action="@Url.Action("Register")" method="post">
+                        <div class="module-head" style="background: white; margin-left: 5%">
+                            <h3 style=" font-size: 35px;" class="gradient-text"> Register </h3>
+                        </div>
+                        <div class="module-body" style="margin-top: 3%; margin-left:5% ; margin-right: 5%; margin-bottom: 3% ">
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    <input class="span12" type="text" name="firstname" placeholder="Fisrtname" style="width: 300px; height: 43px;" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    <input class="span12" type="text" name="lastname" placeholder="Lastname" style="width: 300px; height: 43px;" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    <input class="span12" type="email" name="email" placeholder="Email" style="width: 300px; height: 43px;" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    <input class="span12" type="text" name="mobile" placeholder="Mobile" style="width: 300px; height: 43px;" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    <input class="span12" type="password" name="password" placeholder="Password" style="width: 300px; height: 43px;" />
+                                </div>
+                            </div>
+
+                            @if (ViewBag.Result != null && ViewBag.Result.Success)
+                            {
+                           <div class="controls row-fluid text-success" style=" font-size: 35px;">Registration is successful</div>
+                            }
+                            else if (ViewBag.Result != null && !ViewBag.Result.Success)
+                            {
+                                <div class="controls row-fluid text-danger"  style=" font-size: 35px;" >@ViewBag.Result.Message</div>
+                            }
+                           </div>
+                                <div class="modal-foot">
+                                    <div class="control-group">
+                                        <div class="controls clearfix">
+                                            <button type="submit" class="btn btn-default " value="Register" name="loginBtn">Register</button>
+                                        </div>
+                                    </div>
+                                </div>
+                       </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
